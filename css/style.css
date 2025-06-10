@@ -9,6 +9,10 @@
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Source Sans Pro', sans-serif;
     --transition: all 0.3s ease;
+    --transition-slow: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 15px 30px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Base Styles */

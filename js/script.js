@@ -1,5 +1,16 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Page transition effect
+    const pageTransition = document.querySelector('.page-transition');
+    
+    if (pageTransition) {
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                pageTransition.classList.add('active');
+            }, 500);
+        });
+    }
+    
     // Custom cursor
     const cursor = document.querySelector('.cursor');
     
@@ -7,6 +18,21 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
+        });
+        
+        // Scale cursor on hover over links and buttons
+        const hoverElements = document.querySelectorAll('a, button, .portfolio-item, .social-link');
+        
+        hoverElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                cursor.style.opacity = '0.5';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursor.style.opacity = '1';
+            });
         });
     }
     
@@ -76,4 +102,12 @@ document.addEventListener('DOMContentLoaded', function() {
             this.querySelector('.portfolio-overlay').style.opacity = '0';
         });
     });
+    
+    // Animated title effect
+    const animatedTitle = document.querySelector('.animated-title');
+    if (animatedTitle) {
+        setTimeout(() => {
+            animatedTitle.classList.add('active');
+        }, 1000);
+    }
 });
